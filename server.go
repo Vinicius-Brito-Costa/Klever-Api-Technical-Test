@@ -92,7 +92,7 @@ func apiResult(transactions []ApiData) ([]ApiData, float32, float32) {
 		div := 100000000.0
 		value, err := strconv.ParseFloat(transactions[index].Value, 32);
 		value = value / div;
-		transactions[index].Value = fmt.Sprint(value);
+		transactions[index].Value = fmt.Sprintf("%e\n", value);
 		txid = append(txid, transactions[index])
 		
 		if err != nil {
